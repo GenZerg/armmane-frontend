@@ -68,7 +68,7 @@ class ARMMane{
             "sensorWarningTrigger" : null, // Store the timeout function
             "manualBoxControlTrigger" : null, // Store the timeout function
             "manualBoxControl" : null, // Store the timeout function    
-
+            
         }
 
         this.elements = {
@@ -92,7 +92,9 @@ class ARMMane{
                 "log_disconnect" : this.querySel(".log-disconnect"),
                 "box_serverlist" : this.querySel(".box-serverlist"),
                 "status_inf_trigger" : this.querySel(".status-inf-triggered"),
+                "status_inf_trigger_alt" : this.querySel(".status-inf-triggered-alt"),
                 "status_inf_idle" : this.querySel(".status-inf-idle"),
+                "status_inf_idle_alt" : this.querySel(".status-inf-idle-alt"),
                 "status_conv00_forward" : this.querySel(".status-conv00-fw"),
                 "status_conv00_backward" : this.querySel(".status-conv00-bw"),
                 "status_conv00_stop" : this.querySel(".status-conv00-stop"),
@@ -104,6 +106,7 @@ class ARMMane{
                 "preset_box1" : document.querySelectorAll(".ins-preset-box-1"),
                 "preset_box2" : document.querySelectorAll(".ins-preset-box-2"),
                 "livepreview" : this.querySel(".livepreview"),
+                "livepreview_test" : this.querySel(".livepreview-test"),
                 "settingbox1" : this.querySel(".settingbox-1"),
                 "settingbox2" : this.querySel(".settingbox-2"),
                 "settingbox3" : this.querySel(".settingbox-3"),
@@ -111,6 +114,7 @@ class ARMMane{
                 "log_progress" : this.querySel(".log-progress"),
                 "empty_step" : this.querySel(".empty-step"),
                 "pred_box" : this.querySel(".pred-box"),
+                "pred_box_alt" : this.querySel(".pred-box-alt"),
                 "box_step_1" : this.querySel(".box-step-1"),
                 "box_step_2" : this.querySel(".box-step-2"),
                 "box_step_3" : this.querySel(".box-step-3"),
@@ -145,6 +149,16 @@ class ARMMane{
                 "box_status_a" : this.querySel(".box-status-a"),
                 "box_status_b" : this.querySel(".box-status-b"),
                 "box_status_c" : this.querySel(".box-status-c"),
+                "status_cam_savepower" : this.querySel(".status-cam-savepower"),
+                "status_cam_enable" : this.querySel(".status-cam-enable"),
+                "status_cam_disable" : this.querySel(".status-cam-disable"),
+                "status_predict_on" : this.querySel(".status-predict-on"),
+                "status_predict_off" : this.querySel(".status-predict-off"),
+                "test_sensor_result" : this.querySel(".test-sensor-result"),
+                "test_grip_result" : this.querySel(".test-grip-result"),
+                "ui_test_step_1" : this.querySel(".ui-test-step-1"),
+                "ui_test_step_2" : this.querySel(".ui-test-step-2"),
+                "ui_test_step_3" : this.querySel(".ui-test-step-3"),
             },
             "btn" : {
                 "conn_connectsrv" : this.querySel(".btn-connectsrv"),
@@ -159,6 +173,20 @@ class ARMMane{
                 "main_auto" : this.querySel(".btn-main-auto"),
                 "main_mode" : this.querySel(".btn-main-mode"),
                 "emergency" : this.querySel(".btn-emergency-toggle"),
+                "test_servo_0" : this.querySel(".btn-test-servo0"),
+                "test_servo_1" : this.querySel(".btn-test-servo1"),
+                "test_servo_2" : this.querySel(".btn-test-servo2"),
+                "test_servo_3" : this.querySel(".btn-test-servo3"),
+                "test_servo_4" : this.querySel(".btn-test-servo4"),
+                "test_servo_5" : this.querySel(".btn-test-servo5"),
+                "test_conv_0" : this.querySel(".btn-test-conv0"),
+                "test_conv_1" : this.querySel(".btn-test-conv1"),
+                "camera_refresh" : this.querySel(".btn-model-refresh"),
+                "camera_refresh_alt" : this.querySel(".btn-model-refresh-alt"),
+                "model_refresh" : this.querySel(".btn-camera-refresh"),
+                "model_refresh_alt" : this.querySel(".btn-camera-refresh-alt"),
+                "setup_step_2" : this.querySel(".btn-setup-step-2"),
+                "setup_step_3" : this.querySel(".btn-setup-step-3"),
             },
             "form" : {
                 "conn_address_field" : this.querySel("#form-field-srvaddress"),
@@ -175,9 +203,16 @@ class ARMMane{
                 "cconf_03" : this.querySel("#form-field-cconf-s3"),
                 "cconf_04" : this.querySel("#form-field-cconf-s4"),
                 "box_1" : this.querySel("#form-field-box-a"),
+                "box_1_alt" : this.querySel("#form-field-box-a-alt"),
                 "box_2" : this.querySel("#form-field-box-b"),
+                "box_2_alt" : this.querySel("#form-field-box-b-alt"),
                 "box_3" : this.querySel("#form-field-box-c"),
+                "box_3_alt" : this.querySel("#form-field-box-c-alt"),
                 "cconf_sound" : this.querySel("#form-field-soundstate"),
+                "camera_list" : this.querySel("#form-field-camlist"),
+                "camera_list_alt" : this.querySel("#form-field-camlist-alt"),
+                "model_list" : this.querySel("#form-field-modellist"),
+                "model_list_alt" : this.querySel("#form-field-modellist-alt"),
             },
             "template" : {
                 "btn_serverlist" : this.querySel(".tp-btn-server"),
@@ -195,7 +230,9 @@ class ARMMane{
                 "cconf_title_3" : this.querySel(".cconf-title-3").querySelector("div > h2"),
                 "cconf_title_4" : this.querySel(".cconf-title-4").querySelector("div > h2"),
                 "prediction_class" : this.querySel(".pred-class").querySelector("div > h2"),
+                "prediction_class_alt" : this.querySel(".pred-class-alt").querySelector("div > h2"),
                 "prediction_confident" : this.querySel(".pred-confident").querySelector("div > h2"),
+                "prediction_confident_alt" : this.querySel(".pred-confident-alt").querySelector("div > h2"),
                 "log_title" : this.querySel(".log-title").querySelector("div > h2"),
                 "log_subtitle" : this.querySel(".log-subtitle").querySelector("div > h5"),
                 "log-number" : this.querySel(".log-number").querySelector("div > h1"),
@@ -211,10 +248,13 @@ class ARMMane{
                 "info_cpu_usage_title" : this.querySel(".info-cpu-usage").querySelectorAll("span")[2],
                 "info_memory_usage_title" : this.querySel(".info-memory-usage").querySelectorAll("span")[2],
                 "info_disk_usage_title" : this.querySel(".info-disk-usage").querySelectorAll("span")[2],
+                "test_sensor_result_title" : this.querySel(".test-sensor-result").querySelector("h4"),
+                "test_grip_result_title" : this.querySel(".test-grip-result").querySelector("h4"),
             },
             "icon" : {
                 "log_icon" : this.querySel(".log-icon").querySelector("div > i"),
                 "pred_icon" : this.querySel(".pred-icon").querySelector("div > i"),
+                "pred_icon_alt" : this.querySel(".pred-icon-alt").querySelector("div > i"),
             }
         }
 
@@ -241,9 +281,8 @@ class ARMMane{
         ];
 
         this.eventSource = null;
-        this.videoStream = null;
         
-        // this.uiElements = {
+        // this.elements = {
         //     "arm-status" : this.querySel(".arm-status > div > h2"),
         //     "amn-icon" : this.querySel(".amn-icon"),
         //     "amn-config-box" : this.querySel(".amn-config-box"),
@@ -529,6 +568,20 @@ class ARMMane{
             });
         }
 
+        for (let servo = 0; servo < 6; servo++) {
+            this.setTriggerEvent("btn", "test_servo_" + servo, "click", () => {
+                this.consoleLog("「ARMMANE」 Test servo " + servo);
+                this.testServo(servo);
+            });
+        }
+
+        for (let conv = 0; conv < 1; conv++) {
+            this.setTriggerEvent("btn", "test_conv_" + conv, "click", () => {
+                this.consoleLog("「ARMMANE」 Test conv " + conv);
+                this.testConv(conv);
+            });
+        }
+
         this.setTriggerEvent("btn", "main_info", "click", () => {
             this.mainArea("info");
         });
@@ -563,7 +616,77 @@ class ARMMane{
             this.setCookies("soundState", this.appStatus["soundState"])
         }
         );
-        
+
+        this.setTriggerEvent("form", "camera_list", "change", () => {
+            this.getCameraList();
+        }
+        );
+
+        this.setTriggerEvent("form", "camera_list_alt", "change", () => {
+            this.getCameraList();
+        }
+        );
+
+        this.setTriggerEvent("form", "model_list", "change", () => {
+            this.selectModel();
+        }
+        );
+
+        this.setTriggerEvent("form", "model_list_alt", "change", () => {
+            this.selectModel();
+        }
+        );
+
+        this.setTriggerEvent("ui", "status_cam_savepower", "click", () => {
+            this.savePower();        
+        }
+        );
+
+        this.setTriggerEvent("ui", "status_cam_enable", "click", () => {
+            this.enableCamera();        
+        }
+        );
+
+        this.setTriggerEvent("ui", "status_cam_disable", "click", () => {
+            this.disableCamera();        
+        }
+        );
+
+        this.setTriggerEvent("ui", "status_predict_on", "click", () => {
+            this.enablePredict();        
+        }
+        );
+
+        this.setTriggerEvent("ui", "status_predict_off", "click", () => {
+            this.disablePredict();        
+        }
+        );
+
+        this.setTriggerEvent("btn", "camera_refresh", "click", () => {
+            this.getCameraList();
+        }
+        );
+
+        this.setTriggerEvent("btn", "camera_refresh_alt", "click", () => {
+            this.getCameraList();
+        }
+        );
+
+        this.setTriggerEvent("btn", "model_refresh", "click", () => {
+            this.getModelList();
+        }
+        );
+
+        this.setTriggerEvent("btn", "model_refresh_alt", "click", () => {
+            this.getModelList();
+        }
+        );
+
+        this.setTriggerEvent("btn", "setup_step_2", "click", () => {
+            this.hideElement("ui", "ui_test_step_1");
+            this.showElement("ui", "ui_test_step_2");
+        }
+        );
     }
 
     
@@ -842,7 +965,6 @@ class ARMMane{
         }
     
         this.eventSource = new EventSource(this.appStatus["server"]["fullURL"] + "/sse/status");
-        this.videoStream = new EventSource(this.appStatus["server"]["fullURL"] + "/sse/videostream");
     
         this.eventSource.onopen = () => {
             this.updateConnectionStatus("กำลังเชื่อมต่อกับเซิร์ฟเวอร์");
@@ -870,7 +992,7 @@ class ARMMane{
             this.handleArmStatus(event.data);
         });
 
-        this.videoStream.addEventListener("prediction", (event) => {
+        this.eventSource.addEventListener("prediction", (event) => {
             // this.consoleLog("[INFO] SSE received prediction data");
             this.handlePrediction(event.data);
         });
@@ -882,6 +1004,8 @@ class ARMMane{
         });
 
 
+        this.getCameraList();
+        this.getModelList();
         this.initializePreset();
         this.handleVideoStream();
     }
@@ -946,6 +1070,11 @@ class ARMMane{
     handleAlertStatus(data) {
         let alertStatus = JSON.parse(data);
         this.consoleLog("[INFO] SSE received alert_status: " + data);
+
+        if (alertStatus["arm"]["gripcheck_not_working"] == false){
+            this.elements["text"]["test_grip_result_title"].textContent = "ผ่าน"
+            this.elements["ui"]["test_grip_result"].style.color = "#02F51A"
+        }
 
         alertStatus["arm"]["shuffle_currently"] ?  this.showElement("ui", "alert_shuffle") : this.hideElement("ui", "alert_shuffle");
 
@@ -1102,32 +1231,69 @@ class ARMMane{
     handlePrediction(data) {
         let prediction = JSON.parse(data);
         this.changeText("prediction_class", prediction["current_classes"]);
+        this.changeText("prediction_class_alt", prediction["current_classes"]);
         this.changeText("prediction_confident",  "ความมั่นใจ: " + prediction["confident_score"] + "%");
+        this.changeText("prediction_confident_alt",  "ความมั่นใจ: " + prediction["confident_score"] + "%");
         if(prediction["current_classes"].includes("Triangle")){
             this.changeIcon("pred_icon", "eject");
+            this.changeIcon("pred_icon_alt", "eject");
         } else if(prediction["current_classes"].includes("Square")){
             this.changeIcon("pred_icon", "square");
+            this.changeIcon("pred_icon_alt", "square");
         } else if(prediction["current_classes"].includes("Cylinder")){
             this.changeIcon("pred_icon", "database");
+            this.changeIcon("pred_icon_alt", "database");
         }
         else{
             this.changeIcon("pred_icon", "question");
+            this.changeIcon("pred_icon_alt", "question");
         }
         if(prediction["current_classes"].includes("White")){
             this.elements["ui"]["pred_box"].style.backgroundColor = "#FFFFFF";
+            this.elements["ui"]["pred_box_alt"].style.backgroundColor = "#FFFFFF";
             this.elements["text"]["prediction_confident"].style.color = "#F7496A";
+            this.elements["text"]["prediction_confident_alt"].style.color = "#F7496A";
             this.elements["text"]["prediction_class"].style.color = "#F7496A";
+            this.elements["text"]["prediction_class_alt"].style.color = "#F7496A";
             this.elements["icon"]["pred_icon"].style.color = "#F7496A";
+            this.elements["icon"]["pred_icon_alt"].style.color = "#F7496A";
         } else if(prediction["current_classes"].includes("Red")){
             this.elements["ui"]["pred_box"].style.backgroundColor = "#F7496A";
+            this.elements["ui"]["pred_box_alt"].style.backgroundColor = "#F7496A";
             this.elements["text"]["prediction_confident"].style.color = "#FFFFFF";
+            this.elements["text"]["prediction_confident_alt"].style.color = "#FFFFFF";
             this.elements["text"]["prediction_class"].style.color = "#FFFFFF";
+            this.elements["text"]["prediction_class_alt"].style.color = "#FFFFFF";
             this.elements["icon"]["pred_icon"].style.color = "#FFFFFF";
+            this.elements["icon"]["pred_icon_alt"].style.color = "#FFFFFF";
         } else if(prediction["current_classes"].includes("Blue")){
             this.elements["ui"]["pred_box"].style.backgroundColor = "#006EFF";
+            this.elements["ui"]["pred_box_alt"].style.backgroundColor = "#006EFF";
             this.elements["text"]["prediction_confident"].style.color = "#FFFFFF";
+            this.elements["text"]["prediction_confident_alt"].style.color = "#FFFFFF";
             this.elements["text"]["prediction_class"].style.color = "#FFFFFF";
+            this.elements["text"]["prediction_class_alt"].style.color = "#FFFFFF";
             this.elements["icon"]["pred_icon"].style.color = "#FFFFFF";
+            this.elements["icon"]["pred_icon_alt"].style.color = "#FFFFFF";
+        }
+        if(prediction["camera_running"] == true) {
+            this.elements["ui"]["status_cam_enable"].querySelector(".elementor-icon").style.backgroundColor = "#F7496A"
+            this.elements["ui"]["status_cam_disable"].querySelector(".elementor-icon").style.backgroundColor = "#FCA5B6"
+        } else{
+            this.elements["ui"]["status_cam_enable"].querySelector(".elementor-icon").style.backgroundColor = "#FCA5B6"
+            this.elements["ui"]["status_cam_disable"].querySelector(".elementor-icon").style.backgroundColor = "#F7496A"
+        }
+        this.handlePredictionStatus(prediction);
+    }
+
+    handlePredictionStatus(data) {
+        let prediction = data;
+        if(prediction["detect_running"] == true) {
+            this.elements["ui"]["status_predict_on"].querySelector(".elementor-icon").style.backgroundColor = "#F7496A"
+            this.elements["ui"]["status_predict_off"].querySelector(".elementor-icon").style.backgroundColor = "#FCA5B6"
+        } else{
+            this.elements["ui"]["status_predict_on"].querySelector(".elementor-icon").style.backgroundColor = "#FCA5B6"
+            this.elements["ui"]["status_predict_off"].querySelector(".elementor-icon").style.backgroundColor = "#F7496A"
         }
     }
 
@@ -1212,7 +1378,10 @@ class ARMMane{
             this.elements["ui"]["box_status_c"].classList.remove("drop-inprogress");
             this.appStatus["lastDropBoxPosition"] = -1;
         }
+
+        this.handleCameraStatus(armStatus);
     }
+
 
 
 
@@ -1220,18 +1389,20 @@ class ARMMane{
         // url is /stream/video (without prediction overlay) and /stream/video2 (with prediction overlay)
         //From StreamingResponse(generate(), media_type="multipart/x-mixed-replace; boundary=frame")
         this.elements["ui"]["livepreview"].querySelector("img").src = this.appStatus["server"]["fullURL"] + "/stream/video2";
+        this.elements["ui"]["livepreview_test"].querySelector("img").src = this.appStatus["server"]["fullURL"] + "/stream/video2";
         var retryVideoStreamCount = 0;
         // Detect if the server connection is lost
         if(retryVideoStreamCount < 20){
             this.elements["ui"]["livepreview"].querySelector("img").addEventListener("error", () => {
                 // Try to reconnect
                 this.elements["ui"]["livepreview"].querySelector("img").src = this.appStatus["server"]["fullURL"] + "/stream/video2";
+                this.elements["ui"]["livepreview_test"].querySelector("img").src = this.appStatus["server"]["fullURL"] + "/stream/video2";
                 retryVideoStreamCount++;
             });
         }else{
             this.consoleLog("「ARMMANE」 Cannot connect to video stream", "ERROR");
         }
-
+    
     }
 
 
@@ -1275,6 +1446,26 @@ class ARMMane{
         
     }
 
+    handleCameraStatus(data) {
+        let active = "#F7496A";
+        let inactive = "#FCA5B6";
+        let element_camera_savepower = this.elements["ui"]["status_cam_savepower"].querySelector(".elementor-icon");
+        let element_camera_on = this.elements["ui"]["status_cam_enable"].querySelector(".elementor-icon");
+        let element_camera_off = this.elements["ui"]["status_cam_disable"].querySelector(".elementor-icon");
+
+        element_camera_savepower.style.backgroundColor = inactive;
+        element_camera_on.style.backgroundColor = inactive;
+        element_camera_off.style.backgroundColor = inactive;
+
+        if(data["flag"] == false){
+            element_camera_savepower.style.backgroundColor = active;
+            element_camera_on.style.backgroundColor = inactive;
+            element_camera_off.style.backgroundColor = inactive;
+        }else {
+            element_camera_savepower.style.backgroundColor = inactive;
+        }
+    }   
+
 
 
     
@@ -1290,37 +1481,53 @@ class ARMMane{
         let inactive = "#FCA5B6";
         let warning = "rgb(255 86 7)";
         let element_trigger = this.elements["ui"]["status_inf_trigger"].querySelector(".elementor-icon");
+        let element_trigger_alt = this.elements["ui"]["status_inf_trigger_alt"].querySelector(".elementor-icon");
         let element_idle = this.elements["ui"]["status_inf_idle"].querySelector(".elementor-icon");
+        let element_idle_alt = this.elements["ui"]["status_inf_idle_alt"].querySelector(".elementor-icon");
         if (available == 0 || available == false) {
             if (this.appStatus["sensorWarningTrigger"] == null) {
                 this.appStatus["sensorWarningTrigger"] = setInterval(() => {
                     element_trigger.style.backgroundColor = warning;
+                    element_trigger_alt.style.backgroundColor = warning;
                     element_idle.style.backgroundColor = warning;
+                    element_idle_alt.style.backgroundColor = warning;
                     setTimeout(() => {
                         element_trigger.style.backgroundColor = inactive;
+                        element_trigger_alt.style.backgroundColor = inactive;
                         element_idle.style.backgroundColor = inactive;
+                        element_idle_alt.style.backgroundColor = inactive;
                     }
                     , 500);
                 }, 1000);
+                this.elements["text"]["test_sensor_result_title"].textContent = "ไม่ผ่าน"
+                this.elements["ui"]["test_sensor_result"].style.color = "#F7496A"
                 this.alertLog("เซ็นเซอร์ไม่พร้อมใช้งาน", "กรุณาตรวจสอบเซ็นเซอร์", "exclamation-triangle", "#B11D1D", 5000);
             }
             element_trigger.style.backgroundColor = inactive;
+            element_trigger_alt.style.backgroundColor = inactive;
             element_idle.style.backgroundColor = inactive;
+            element_idle_alt.style.backgroundColor = inactive;
         }
         else if (value == 0 || value == false) {
             if (this.appStatus["sensorWarningTrigger"] != null) {
                 clearInterval(this.appStatus["sensorWarningTrigger"]);
                 this.appStatus["sensorWarningTrigger"] = null;
+                this.elements["text"]["test_sensor_result_title"].textContent = "ผ่าน"
+                this.elements["ui"]["test_sensor_result"].style.color = "#02F51A"
             }
             element_trigger.style.backgroundColor = inactive;
+            element_trigger_alt.style.backgroundColor = inactive;
             element_idle.style.backgroundColor = active;
+            element_idle_alt.style.backgroundColor = active;
         }else if (value == 1 || value == true) {
             if (this.appStatus["sensorWarningTrigger"] != null) {
                 clearInterval(this.appStatus["sensorWarningTrigger"]);
                 this.appStatus["sensorWarningTrigger"] = null;
             }
             element_trigger.style.backgroundColor = active;
+            element_trigger_alt.style.backgroundColor = active;
             element_idle.style.backgroundColor = inactive;
+            element_idle_alt.style.backgroundColor = inactive;
         }else{
 
         }
@@ -1816,17 +2023,17 @@ class ARMMane{
     }
 
 
-    addDropdownItem(element_name, item_name, item_value) {
+    addDropdownItem(mode, element_name, item_name, item_value) {
         let item = document.createElement("option");
         item.value = item_value;
         item.textContent = item_name;
-        this.uiElements[element_name].appendChild(item);
+        this.elements[mode][element_name].appendChild(item);
     }
 
 
 
-    clearDropdownItem(element_name) {
-        this.uiElements[element_name].options.length = 0;
+    clearDropdownItem(mode, element_name) {
+        this.elements[mode][element_name].options.length = 0;
     }
 
     addModelItem() {
@@ -2132,30 +2339,218 @@ class ARMMane{
     }
 
     changeProgress(element_name, progress) {
-        this.uiElements[element_name].style.width = progress + "%";
+        this.elements[element_name].style.width = progress + "%";
     }
 
     getProgress(element_name) {
-        return this.uiElements[element_name].style.width;
+        return this.elements[element_name].style.width;
     }
 
 
     toggleArmConfig() {
-        if (this.uiElements["amn-config-box"].style.display == "none") {
-            this.uiElements["amn-config-box"].style.display = "flex";
-            this.uiElements["btn-config-inner"].style.color = "#FF006E";
-            this.uiElements["btn-config-inner"].style.backgroundColor = "#FFFFFF";
+        if (this.elements["amn-config-box"].style.display == "none") {
+            this.elements["amn-config-box"].style.display = "flex";
+            this.elements["btn-config-inner"].style.color = "#FF006E";
+            this.elements["btn-config-inner"].style.backgroundColor = "#FFFFFF";
         }
         else {
-            this.uiElements["amn-config-box"].style.display = "none";
-            this.uiElements["btn-config-inner"].style.color = "#FFFFFF";
-            this.uiElements["btn-config-inner"].style.backgroundColor = "#FF006E";
+            this.elements["amn-config-box"].style.display = "none";
+            this.elements["btn-config-inner"].style.color = "#FFFFFF";
+            this.elements["btn-config-inner"].style.backgroundColor = "#FF006E";
         }
     }
 
     setSoundState() {
         this.appStatus["soundState"] = this.strToBool(this.elements["form"]["cconf_sound"].value);
         this.consoleLog("「ARMMANE」 Sound state set to " + this.appStatus["soundState"]);
+    }
+
+    getCameraList() {
+        // Get camera list from api
+
+        return fetch(this.appStatus["server"]["fullURL"] + "/camera", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response) => {
+            if (response.status == 200) {
+                response.json().then((data) => {
+                    // Example data is json
+                    // {
+                    // "status": "success",
+                    // "message": "Return current available camera",
+                    // "camera": {
+                    //     "0": "Camera 0"
+                    // }
+                    // }
+                    this.clearDropdownItem("form", "camera_list");
+                    for (let i = 0; i < Object.keys(data["camera"]).length; i++) {
+                        this.addDropdownItem("form", "camera_list", data["camera"][i], i);
+                    }
+                });
+            }
+            else {
+                this.consoleLog("Get config request sent failed", "ERROR");
+            }
+        });
+    }
+
+    selectCamera() {
+        // send post api to server
+        fetch(this.appStatus["server"]["fullURL"] + "/camera/" + this.elements["form"]["camera_list"].value, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            this.consoleLog("「ARMMANE」 Camera changed to " + this.elements["form"]["camera_list"].value);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    getModelList() {
+        // Get model list from api
+        return fetch(this.appStatus["server"]["fullURL"] + "/info", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((response) => {
+            if (response.status == 200) {
+                response.json().then((data) => {
+                    this.clearDropdownItem("form", "model_list");
+                    for (let i = 0; i < Object.keys(data["model"]["models"]).length; i++) {
+                        this.addDropdownItem("form", "model_list", data["model"]["models"][i], data["model"]["models"][i]);
+                    }
+                });
+            }
+            else {
+                this.consoleLog("Get config request sent failed", "ERROR");
+            }
+        });
+    }
+
+    selectModel() {
+        // send post api to server
+        fetch(this.appStatus["server"]["fullURL"] + "/config/currentmodel/" + this.elements["form"]["model_list"].value, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            this.consoleLog("「ARMMANE」 Model changed to " + this.elements["form"]["model_list"].value);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    savePower() {
+        fetch(this.appStatus["server"]["fullURL"] + "/flag/not_stop_camera/toggle", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            if(data["status"] == "success"){
+                this.consoleLog("「ARMMANE」 Power saving mode changed");
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    enableCamera() {
+        fetch(this.appStatus["server"]["fullURL"] + "/camera/start", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            if(data["status"] == "success"){
+                this.consoleLog("「ARMMANE」 Camera enabled");
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    disableCamera() {
+        fetch(this.appStatus["server"]["fullURL"] + "/camera/stop", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            if(data["status"] == "success"){
+                this.consoleLog("「ARMMANE」 Camera disabled");
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    enablePredict() {
+        fetch(this.appStatus["server"]["fullURL"] + "/detect/start", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            if(data["status"] == "success"){
+                this.consoleLog("「ARMMANE」 Predict enabled");
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    disablePredict() {
+        fetch(this.appStatus["server"]["fullURL"] + "/detect/stop", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            if(data["status"] == "success"){
+                this.consoleLog("「ARMMANE」 Predict disabled");
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    testServo(servo) {
+        fetch(this.appStatus["server"]["fullURL"] + "/test/servo/" + servo, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+    }
+
+    testConv(conv) {
+        fetch(this.appStatus["server"]["fullURL"] + "/test/conv/" + conv, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
     }
 
     setCookies(name, value) {

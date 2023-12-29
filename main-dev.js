@@ -159,6 +159,7 @@ class ARMMane{
                 "ui_test_step_1" : this.querySel(".ui-test-step-1"),
                 "ui_test_step_2" : this.querySel(".ui-test-step-2"),
                 "ui_test_step_3" : this.querySel(".ui-test-step-3"),
+                "auth": this.querySel(".scr-setup"),
             },
             "btn" : {
                 "conn_connectsrv" : this.querySel(".btn-connectsrv"),
@@ -185,8 +186,8 @@ class ARMMane{
                 "camera_refresh_alt" : this.querySel(".btn-model-refresh-alt"),
                 "model_refresh" : this.querySel(".btn-camera-refresh"),
                 "model_refresh_alt" : this.querySel(".btn-camera-refresh-alt"),
-                "setup_step_2" : this.querySel(".btn-setup-step-2"),
-                "setup_step_3" : this.querySel(".btn-setup-step-3"),
+                "setup_step_2" : this.querySel(".btn-setup-step2"),
+                "setup_step_3" : this.querySel(".btn-setup-step3"),
             },
             "form" : {
                 "conn_address_field" : this.querySel("#form-field-srvaddress"),
